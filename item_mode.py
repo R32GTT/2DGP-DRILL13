@@ -1,6 +1,7 @@
 import game_framework
 import game_world
 import play_mode
+from ball import Ball
 from pico2d import *
 
 
@@ -36,7 +37,11 @@ def handle_events():
             if event.key in (SDLK_ESCAPE, SDLK_i):
                 game_framework.pop_mode()
             elif event.key in (SDLK_0, SDLK_1, SDLK_2):
-                select_ball(event.key - SDLK_0)
+                select_ball({
+                    SDLK_0: Ball.NONE,
+                    SDLK_1: Ball.SMALL,
+                    SDLK_2: Ball.LARGE,
+                }[event.key])
 
 
 def select_ball(size):
