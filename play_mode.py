@@ -7,6 +7,7 @@ from boy import Boy
 from grass import Grass
 
 boy = None
+ball_size = 1
 
 
 def handle_events():
@@ -28,6 +29,7 @@ def init():
     game_world.add_oject(grass, 0)
 
     boy = Boy()
+    boy.ball_size = ball_size
     game_world.add_oject(boy, 1)
 
 def update():
@@ -51,5 +53,4 @@ def finish():
     global boy
     game_world.clear()
     boy = None
-
 
