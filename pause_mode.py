@@ -8,7 +8,7 @@ font = None
 
 def init():
     global font
-    font = load_font('../LEC16_Time/ENCR10B.TTF', 50)
+    font = load_font('C:\\Windows\\Fonts\\arial.ttf', 50)
 
 
 def finish():
