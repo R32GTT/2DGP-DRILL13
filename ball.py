@@ -6,13 +6,15 @@ import game_world
 class Ball:
     SMALL = 1
     LARGE = 2
-    image = None
+    images = {}
 
-    def __init__(self, x, y, velocity):
-        if Ball.image is None:
-            Ball.image = load_image('ball21x21.png')
+    def __init__(self, x, y, velocity, size=SMALL):
+        if size not in Ball.images:
+            filename = 'ball41x41.png' if size == Ball.LARGE else 'ball21x21.png'
+            Ball.images[size] = load_image(filename)
         self.x, self.y = x, y
         self.velocity = velocity
+        self.image = Ball.images[size]
 
     def update(self):
         self.x += self.velocity
