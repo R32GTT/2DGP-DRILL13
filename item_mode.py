@@ -33,7 +33,7 @@ def handle_events():
         if event.type == SDL_QUIT:
             game_framework.quit()
         elif event.type == SDL_KEYDOWN:
-            if event.key == SDLK_ESCAPE:
+            if event.key in (SDLK_ESCAPE, SDLK_i):
                 game_framework.pop_mode()
             elif event.key in (SDLK_0, SDLK_1, SDLK_2):
                 select_ball(event.key - SDLK_0)
