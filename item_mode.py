@@ -32,5 +32,14 @@ def handle_events():
     for event in get_events():
         if event.type == SDL_QUIT:
             game_framework.quit()
-        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
-            game_framework.pop_mode()
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_ESCAPE:
+                game_framework.pop_mode()
+            elif event.key in (SDLK_0, SDLK_1, SDLK_2):
+                select_ball(event.key - SDLK_0)
+
+
+def select_ball(size):
+    play_mode.ball_size = size
+    play_mode.boy.ball_size = size
+    game_framework.pop_mode()
