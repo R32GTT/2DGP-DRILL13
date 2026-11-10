@@ -4,6 +4,8 @@ import game_world
 
 
 class Ball:
+    SMALL = 1
+    LARGE = 2
     image = None
 
     def __init__(self, x, y, velocity):
