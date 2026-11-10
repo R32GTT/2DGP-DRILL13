@@ -18,7 +18,7 @@ def finish():
 
 
 def update():
-    pass
+    play_mode.update()
 
 
 def render():
