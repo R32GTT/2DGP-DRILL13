@@ -3,11 +3,12 @@ import game_framework
 import game_world
 import pause_mode
 import title_mode
+from ball import Ball
 from boy import Boy
 from grass import Grass
 
 boy = None
-ball_size = 1
+ball_size = Ball.SMALL
 
 
 def handle_events():
