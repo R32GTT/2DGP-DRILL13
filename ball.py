@@ -4,6 +4,7 @@ import game_world
 
 
 class Ball:
+    NONE = 0
     SMALL = 1
     LARGE = 2
     images = {}
